@@ -47,7 +47,7 @@ public abstract class ToolBox {
 	public static float getLineLength(PointF a,PointF b){
 		float vx = b.x - a.x;
 		float vy = b.y - a.y;
-		return FloatMath.sqrt(vx*vx + vy*vy);
+		return (float)Math.sqrt(vx*vx + vy*vy);
 	}
 	/**
 	 * Get length of line between points A and B.
@@ -60,7 +60,7 @@ public abstract class ToolBox {
 	public static float getLineLength(float ax,float ay, float bx,float by){
 		float vx = bx - ax;
 		float vy = by - ay;
-		return FloatMath.sqrt(vx*vx + vy*vy);
+		return (float)Math.sqrt(vx*vx + vy*vy);
 	}
 	
 	/**
@@ -70,11 +70,11 @@ public abstract class ToolBox {
 	 * @return length
 	 */
 	public static float getVectorLength(float vx,float vy){
-		return FloatMath.sqrt(vx*vx + vy*vy);
+		return (float)Math.sqrt(vx*vx + vy*vy);
 	}
 	
 	public static float getVectorLength(PointF v){
-		return FloatMath.sqrt(v.x*v.x + v.y*v.y);
+		return (float)Math.sqrt(v.x*v.x + v.y*v.y);
 	}
 	
 	/**
@@ -234,7 +234,7 @@ public abstract class ToolBox {
     	final float dx = x2;
     	final float dy = y2;
     	
-    	final float dr = FloatMath.sqrt(dx*dx + dy*dy);
+    	final float dr = (float)Math.sqrt(dx*dx + dy*dy);
     	
     	final PointF res1 = new PointF();
     	final PointF res2 = new PointF();
