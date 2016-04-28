@@ -504,16 +504,21 @@ public class FeatureCoverFlow extends EndlessLoopAdapterContainer implements Vie
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		
 		switch (keyCode) {
-		case KeyEvent.KEYCODE_DPAD_LEFT:
-			scroll((int) (-1 * mCoverWidth * mSpacing) - mCenterItemOffset);
-			return true;
-		case KeyEvent.KEYCODE_DPAD_RIGHT:
-			scroll((int) (mCoverWidth * mSpacing) - mCenterItemOffset);
-			return true;
-		default:
-			break;
+			case KeyEvent.KEYCODE_DPAD_LEFT:
+				scroll((int) (-1 * mCoverWidth * mSpacing) - mCenterItemOffset);
+				return true;
+			case KeyEvent.KEYCODE_DPAD_RIGHT:
+				scroll((int) (mCoverWidth * mSpacing) - mCenterItemOffset);
+				return true;
+			case KeyEvent.KEYCODE_ENTER:
+			case KeyEvent.KEYCODE_DPAD_CENTER:
+				if(mOnItemClickListener != null) mOnItemClickListener.onItemClick(this, this, mlastCenterItemPosition , getItemIdAtPosition(mlastCenterItemPosition));
+				if(mOnItemSelectedListener != null) mOnItemSelectedListener.onItemSelected(this, this, mlastCenterItemPosition, getItemIdAtPosition(mlastCenterItemPosition));
+
+				return true;
+			default:
+				break;
 		}
 		return super.onKeyDown(keyCode, event);
 	}
