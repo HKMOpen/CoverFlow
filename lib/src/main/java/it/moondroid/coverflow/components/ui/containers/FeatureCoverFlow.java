@@ -573,7 +573,7 @@ public class FeatureCoverFlow extends EndlessLoopAdapterContainer implements Vie
 			}
 			
 			child = mAdapter.getView(mLastItemPosition, getCachedView(), this);
-      Validate.notNull(child, "Your adapter has returned null from getView.");
+      		Validate.notNull(child, "Your adapter has returned null from getView.");
 			child = addAndMeasureChildHorizontal(child, LAYOUT_MODE_AFTER);
 			left = layoutChildHorizontal(child, left, (LoopLayoutParams) child.getLayoutParams());
 			right = child.getRight();
