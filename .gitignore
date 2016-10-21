@@ -29,3 +29,7 @@ proguard/
 
 
 image-cover-flow.iml
+
+.idea/compiler.xml
+.idea
+*.iml
